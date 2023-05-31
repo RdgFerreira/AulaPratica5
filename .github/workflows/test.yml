@@ -26,8 +26,9 @@ jobs:
           python-version: 3.9
 
       - name: Install dependencies
-        run: pip install --upgrade pip
-        run: pip install unittest
+        run:
+          python -m pip install --upgrade pip
+          pip install unittest
 
       - name: Run tests
         run: python -m unittest discover -s tests -p "*test*.py"
